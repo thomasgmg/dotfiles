@@ -1,0 +1,44 @@
+export PS1='\u@\h \[\e[32m\]\w \[\e[91m\]$(__git_ps1)\[\e[00m\]$ '
+export VISUAL="vim"
+export EDITOR="$VISUAL"
+
+bind -m vi-insert '"jj": vi-movement-mode'
+
+# Maven
+alias mi="mvn install"
+alias mci="mvn clean install"
+alias mcit="mvn clean install -DskipTests"
+alias mcidb="mvn clean install -Pinitdb"
+alias mp="mvn package -Pbundle"
+alias mcp="mvn clean package -Pbundle"
+alias mt="mvn test -DfailIfNoTests=false"
+alias mit="mvn verify -Pintegration-test"
+alias mc="mvn clean && find . -mindepth 1 -maxdepth 2 -type d -name state -print0 | xargs -0 -I {} rm -rf {} +"
+
+export PATH=~/IdeaProjects/dev-scripts:$PATH
+export PATH=/Applications/IntelliJ\ IDEA.app/Contents/MacOS:$PATH
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+set -o vi
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --bash)"
+
+eza_params=('--git' '--icons' '--classify' '--group-directories-first' '--time-style=long-iso' '--group' '--color-scale')
+
+alias l='eza $eza_params'
+#alias l='eza --git-ignore $eza_params'
+alias ll='eza --all --header --long $eza_params'
+alias llm='eza --all --header --long --sort=modified $eza_params'
+alias la='eza -lbhHigUmuSa'
+alias lx='eza -lbhHigUmuSa@'
+alias lt='eza --tree $eza_params'
+alias tree='eza --tree $eza_params'
+
+alias cat='bat'
+
+alias cdidea='cd ~/IdeaProjects'
+alias cdb='cd ~/dev/branches'
