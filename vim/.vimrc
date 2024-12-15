@@ -1,12 +1,37 @@
+" enable mouse support
+set mouse=a
+
+" Turn syntax highlighting on.
+syntax on
+
+set relativenumber number
+
+" Highlight cursor line underneath the cursor horizontally.
+set cursorline
+:highligh Cursorline cterm=bold ctermbg=darkgray
+
+" enable color themes "
+if !has('gui_running')
+	set t_Co=256
+endif
+" enable true colors support "
+set termguicolors
+" Vim colorscheme "
+colorscheme desert
+
+" plugins
 call plug#begin()
 
 " List your plugins here
 Plug 'tpope/vim-sensible'
 Plug 'machakann/vim-highlightedyank'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
-set relativenumber number
+" -----------------------
+"
 set clipboard=unnamed
 
 """ Map leader to space ---------------------
@@ -23,7 +48,6 @@ inoremap jj <Esc>
 set showmode
 set showcmd
 set so=5
-set incsearch
 set visualbell
 set scrolloff=10
 set ignorecase
@@ -48,12 +72,6 @@ filetype off
 
 " Enable plugins and load plugin for the detected file type.
 filetype plugin indent on
-
-" Turn syntax highlighting on.
-syntax on
-
-" Highlight cursor line underneath the cursor horizontally.
-"set cursorline
 
 " Highlight cursor line underneath the cursor vertically.
 "set cursorcolumn
@@ -83,7 +101,7 @@ set modelines=0
 set wrap
 set autoindent
 set smartindent
-set tabstop=4 shiftwidth=4 expandtab
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
 " Enable auto completion menu after pressing TAB.
 set wildmenu

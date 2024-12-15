@@ -1,6 +1,11 @@
+#!/bin/bash
+
 export PS1='\u@\h \[\e[32m\]\w \[\e[91m\]$(__git_ps1)\[\e[00m\]$ '
 export VISUAL="vim"
 export EDITOR="$VISUAL"
+
+alias nvimk='NVIM_APPNAME="nvim-kickstart" nvim'
+alias nviml='NVIM_APPNAME="nvim" nvim'
 
 bind -m vi-insert '"jj": vi-movement-mode'
 

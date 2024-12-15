@@ -80,7 +80,14 @@ map <leader>r <Action>(RenameElement)
 map <leader>c <Action>(Stop)
 map <leader>z <Action>(ToggleDistractionFreeMode)
 
-map <leader>s <Action>(SelectInProjectView)
+map <leader>ts <Action>(SelectInProjectView)
+map <leader>tp <Action>(ActivateProjectToolWindow)
+map <leader>tc <Action>(ActivateCommitToolWindow)
+map <leader>tf <Action>(ActivateStructureToolWindow)
+map <leader>tg <Action>(ActivateVersionControlToolWindow)
+map <leader>td <Action>(ActivateDebugToolWindow)
+map <leader>tt <Action>(ActivateDatabaseToolWindow)
+
 map <leader>a <Action>(Annotate)
 map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
 map <S-Space> <Action>(GotoNextError)
@@ -99,6 +106,13 @@ nnoremap <C-u> <C-u>zz
 " Jump between methods
 map [[ <Action>(MethodUp)zz
 map ]] <Action>(MethodDown)zz
+
+nmap viq vi"
+nmap vaq va"
+nmap ciq ci"
+nmap caq ca"
+nmap diq di"
+nmap daq da"
 
 """HarpoonIJ
 "nmap <leader><C-h> :action SetHarpoon1<cr>
