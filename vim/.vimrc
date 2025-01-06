@@ -1,3 +1,7 @@
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+" :PlugInstall
+"
+"
 " enable mouse support
 set mouse=a
 
@@ -7,17 +11,17 @@ syntax on
 set relativenumber number
 
 " Highlight cursor line underneath the cursor horizontally.
-set cursorline
-:highligh Cursorline cterm=bold ctermbg=darkgray
+"set cursorline
+":highligh Cursorline cterm=bold ctermbg=darkgray
 
 " enable color themes "
-if !has('gui_running')
-	set t_Co=256
-endif
+"if !has('gui_running')
+"	set t_Co=256
+"endif
 " enable true colors support "
-set termguicolors
+"set termguicolors
 " Vim colorscheme "
-colorscheme desert
+"colorscheme desert
 
 " plugins
 call plug#begin()
@@ -32,7 +36,9 @@ call plug#end()
 
 " -----------------------
 "
-set clipboard=unnamed
+" mac
+"set clipboard=unnamed
+set clipboard=unnamedplus
 
 """ Map leader to space ---------------------
 let mapleader=" "
