@@ -19,9 +19,7 @@ set relativenumber number
 "	set t_Co=256
 "endif
 " enable true colors support "
-"set termguicolors
-" Vim colorscheme "
-"colorscheme desert
+set termguicolors
 
 " plugins
 call plug#begin()
@@ -31,10 +29,13 @@ Plug 'tpope/vim-sensible'
 Plug 'machakann/vim-highlightedyank'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'doums/darcula'
 
 call plug#end()
 
 " -----------------------
+" Vim colorscheme "
+colorscheme darcula
 "
 " mac
 "set clipboard=unnamed
