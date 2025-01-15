@@ -30,6 +30,7 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'doums/darcula'
+Plug 'jasonccox/vim-wayland-clipboard'
 
 call plug#end()
 
