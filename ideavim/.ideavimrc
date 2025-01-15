@@ -4,6 +4,7 @@
 " :action IdeaVim.ReloadVimRc.reload
 " or
 " :source ~/.ideavimrc
+" :so $MYVIMRC
 
 " Plugins ----------------------------------
 " https://github.com/JetBrains/ideavim/wiki/IdeaVim-Plugins
@@ -24,7 +25,9 @@ Plug 'vim-matchit'
 
 inoremap jj <Esc>
 set relativenumber number
-set clipboard+=unnamedplus
+set clipboard=unnamedplus
+"set clipboard=+unnamed
+"set clipboard+=ideaput
 nmap vi" :action EditorSelectWord<CR>:normal vi"<CR>
 nnoremap gi :action GotoImplementation<CR>
 nnoremap gs :action GotoSuperMethod<CR>
@@ -87,6 +90,15 @@ map <leader>tf <Action>(ActivateStructureToolWindow)
 map <leader>tg <Action>(ActivateVersionControlToolWindow)
 map <leader>td <Action>(ActivateDebugToolWindow)
 map <leader>tt <Action>(ActivateDatabaseToolWindow)
+
+" splits
+map <C-w>l <Action>(NextSplitter)
+map <leader>ws <Action>(SplitHorizontally)
+map <leader>wv <Action>(SplitVertically)
+map <leader>wq <Action>(Unsplit)
+
+" Let Ctrl+V paste from clipboard in insert mode
+inoremap <C-v> <Esc>"*pa
 
 map <leader>a <Action>(Annotate)
 map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
