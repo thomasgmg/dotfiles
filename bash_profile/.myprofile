@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 export PS1='\u@\h \[\e[32m\]\w \[\e[91m\]$(__git_ps1)\[\e[00m\]$ '
 export VISUAL="vim"
@@ -11,6 +11,9 @@ set -o vi
 # alias nvimk='NVIM_APPNAME="nvim-kickstart" nvim'
 # alias nviml='NVIM_APPNAME="nvim" nvim'
 alias v=nvim
+
+unset GTK_IM_MODULE
+unset QT_IM_MODULE
 
 # Maven
 alias mi="mvn install"
@@ -30,16 +33,16 @@ export MAVEN_OPTS="-Xms128m -Xmx1024m"
 # Java
 export JAVA_OPTS="-Xms128m -Xmx512m"
 
-export PATH=~/IdeaProjects/dev-scripts:$PATH
-export PATH=/Applications/IntelliJ\ IDEA.app/Contents/MacOS:$PATH
+export PATH=~/go/bin:$PATH
+export PATH=~/software/idea-IC-243.23654.189/bin:$PATH
 
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 # Set up fzf key bindings and fuzzy completion
-eval "$(fzf --bash)"
+# eval "$(fzf --bash)"
 
 # eza_params=('--git' '--icons' '--classify' '--group-directories-first' '--time-style=long-iso' '--group' '--color-scale')
 
@@ -62,5 +65,3 @@ alias cdb='cd ~/dev/branches'
 #export CATALINA_HOME="/Library/Tomcat"
 #export CATALINA_BASE="/Library/Tomcat"
 #export CATALINA_OPTS="-Xms128m -Xmx512m"
-
-
