@@ -17,125 +17,184 @@ Plug 'justinmk/vim-sneak'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'vim-scripts/argtextobj.vim'
 Plug 'dbakker/vim-paragraph-motion'
+" <count>ai	An Indentation level and line above.
+" <count>ii	Inner Indentation level (no line above).
+" <count>aI	An Indentation level and lines above/below.
+" <count>iI	Inner Indentation level (no lines above/below).
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'vim-matchit'
-
-
-  """ IdeaVim settings ------------------------
-
-inoremap jj <Esc>
-set relativenumber number
-set clipboard=unnamedplus
-"set clipboard=+unnamed
-"set clipboard+=ideaput
-nmap vi" :action EditorSelectWord<CR>:normal vi"<CR>
-nnoremap gi :action GotoImplementation<CR>
-nnoremap gs :action GotoSuperMethod<CR>
-nmap ~ g~l
-vmap ~ g~h
-nmap <C-o> :action Back<CR>
-nnoremap <leader>u /\u<cr>
-"vnoremap .. <Action>(EditorSelectWord)
-"vnoremap if <Action>(ExtendSelection)
-vmap if <Action>(EditorSelectWord)
-nmap S _c$
-
-""" Map leader to space ---------------------
-let mapleader=" "
-
-""" Common settings -------------------------
-set showmode
-set showcmd
-set so=5
-set incsearch
-set visualbell
-set scrolloff=10
-set ignorecase
-set smartcase
-set incsearch
-set hlsearch
+Plug 'tpope/vim-commentary'
+" ae targets the entire content of the current buffer.
+" ie is similar to ae, but ie does not include leading and trailing empty lines.
+Plug 'kana/vim-textobj-entire'
+" <leader>mj          |  <Plug>(easymotion-j) |
+Plug 'easymotion/vim-easymotion'
 
 set highlightedyank
 "set sneak
 set quickscope
 set which-key
-" increase the timeoutlen (default: 1000), don't add space around the equal sign
-set timeoutlen=5000
+set mini-ai
+set peekaboo
+set functiontextobj
+
+" ---------------------------------------
+
+let mapleader = "\<Space>"
+
+map <leader>m <Plug>(easymotion-prefix)
+
+" Files ----------------------------------
+let g:WhichKeyDesc_display = "<leader>s search"
+
+" Fuzzy search for files
+nnoremap <leader><Space> :action GotoFile<CR>
+
+" Fuzzy search for open buffers
+nnoremap <leader>, :action RecentFiles<CR>
+
+" find in files
+nnoremap <leader>sg :action FindInPath<CR>
+
+" Project / explorer ----------------------------------
+
+nnoremap  <leader>e :action SelectInProjectView<CR>
+" select project tool window
+nnoremap  <leader>tp :action ActivateProjectToolWindow<CR>
+
+" Tool Windows -------------------------------------------
+let g:WhichKeyDesc_display = "<leader>t tool views"
+
+map <leader>tc :action ActivateCommitToolWindow<CR>
+map <leader>tf :action ActivateStructureToolWindow<CR>
+map <leader>tg :action ActivateVersionControlToolWindow<CR>
+map <leader>td :action ActivateDebugToolWindow<CR>
+map <leader>tt :action ActivateDatabaseToolWindow<CR>
+map <leader>th :action ActivateHierarchyToolWindow<CR>
+
+" Maven -------------------------------
+
+" reload
+nnoremap <leader>pm :action Maven.ReimportProject<CR>
+
+" Code actions -------------------------------
+let g:WhichKeyDesc_display = "<leader>c code"
+
+" Rename
+nnoremap <leader>cr :action RenameElement<CR>
+
+" replace in files
+nnoremap <leader>gr :action ReplaceInPath<CR>
+
+" Popup dialog with file structure
+nnoremap <leader>o :action FileStructurePopup<CR>
+
+" OptimizeImports
+nnoremap <leader>ci :action OptimizeImports<CR>
+
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gs :action GotoSuperMethod<CR>
+
+nnoremap <C-o> :action Back<CR>
+
+" Debug ----------------------------------
+let g:WhichKeyDesc_display = "<leader>d Debug"
+
+" debug last
+nnoremap  <leader>dl :action Debug<CR>
+" F8 / continue also works
+nnoremap <leader>da :action ChooseDebugConfiguration<CR>
+
+" debug current test method or class methods
+nnoremap <leader>dc :action ContextDebug<CR>
+
+nnoremap <leader>b :action ToggleLineBreakpoint<CR>
+
+" TODO doesn't work
+nnoremap <leader>dmb :action XDebugger.MuteBreakpoints<CR>
+
+" open debug context menu
+" DebugMainMenu
+
+" Git ---------------------------------
+let g:WhichKeyDesc_display = "<leader>g Git"
+
+nnoremap <leader>ga :action Vcs.QuickListPopupAction<CR>
+
+" UI ---------------------------------
+let g:WhichKeyDesc_display = "<leader>u UI"
+
+nnoremap <leader>uc :action ShowPopupMenu<CR>
+
+
+" Editing -----------------------------
+
+inoremap jj <Esc>
+nnoremap [<space> O<Esc>j
+nnoremap ]<space> o<Esc>k
+
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+
+" Jump between methods
+nnoremap [[ :action MethodUp<CR>zz
+nnoremap ]] :action MethodDown<CR>zz
+
+" Let Ctrl+V paste from clipboard in insert mode
+inoremap <C-v> <Esc>"*pa
+
+nnoremap S _c$
+
+" Jumps to next uppercase letter.
+" :noh<CR> → Disables search highlighting immediately after jumping.
+nnoremap <leader>gu /\u<cr>:noh<CR>
+
+" Windows ---------------------------------
+let g:WhichKeyDesc_display = "<leader>w windows"
+
+" splits
+nnoremap <C-w>h :action PrevSplitter<CR>
+nnoremap <C-w>l :action NextSplitter<CR>
+nnoremap <leader>ws :action SplitHorizontally<CR>
+nnoremap <leader>wv :action SplitVertically<CR>
+nnoremap <leader>wq :action Unsplit<CR>
+
+" ----------------------------------
 
 """ Idea specific settings ------------------
 set ideajoin
 ""set ideastatusicon=gray
 set idearefactormode=keep
 set surround
+set ideamarks
 
-""" Mappings --------------------------------
-""map <leader>f <Plug>(easymotion-s)
-""map <leader>e <Plug>(easymotion-f)
+""" Common settings -------------------------
 
-let g:WhichKeyDesc_display = "<leader>d Display options"
+set relativenumber number
+set clipboard=unnamedplus
+"set clipboard=+unnamed
+"set clipboard+=ideaput
 
-let g:WhichKeyDesc_zen_mode = "<leader>dz Toggle Zen mode"
-let g:WhichKeyDesc_df_mode = "<leader>dd Toggle Distraction-Free mode"
-let g:WhichKeyDesc_fullscreen = "<leader>df Toggle full screen"
+set showmode
+set showcmd
+set so=5
+set visualbell
+set scrolloff=10
+set ignorecase
+set smartcase
 
-map <leader>d <Action>(Debug)
-map <leader>r <Action>(RenameElement)
-map <leader>c <Action>(Stop)
-map <leader>z <Action>(ToggleDistractionFreeMode)
+" incsearch is causing search to fail
+" set incsearch
+set noincsearch
+set hlsearch
+" set nohlsearch
 
-map <leader>ts <Action>(SelectInProjectView)
-map <leader>tp <Action>(ActivateProjectToolWindow)
-map <leader>tc <Action>(ActivateCommitToolWindow)
-map <leader>tf <Action>(ActivateStructureToolWindow)
-map <leader>tg <Action>(ActivateVersionControlToolWindow)
-map <leader>td <Action>(ActivateDebugToolWindow)
-map <leader>tt <Action>(ActivateDatabaseToolWindow)
+" increase the timeoutlen (default: 1000), don't add space around the equal sign
+" useful for which-key
+set timeoutlen=20000
 
-" splits
-map <C-w>l <Action>(NextSplitter)
-map <leader>ws <Action>(SplitHorizontally)
-map <leader>wv <Action>(SplitVertically)
-map <leader>wq <Action>(Unsplit)
+" plugin cong
 
-" Let Ctrl+V paste from clipboard in insert mode
-inoremap <C-v> <Esc>"*pa
-
-map <leader>a <Action>(Annotate)
-map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
-map <S-Space> <Action>(GotoNextError)
-
-map <leader>b <Action>(ToggleLineBreakpoint)
-map <leader>o <Action>(FileStructurePopup)
-
-map <leader>f <Action>(Replace)
-
-" custom
-nnoremap <C-d> <C-d>zz
-nnoremap <C-u> <C-u>zz
-
-"nnoremap <C-f> ]mzz
-"nnoremap <C-b> [mzz
-" Jump between methods
-map [[ <Action>(MethodUp)zz
-map ]] <Action>(MethodDown)zz
-
-nmap viq vi"
-nmap vaq va"
-nmap ciq ci"
-nmap caq ca"
-nmap diq di"
-nmap daq da"
-
-"""HarpoonIJ
-"nmap <leader><C-h> :action SetHarpoon1<cr>
-"nmap <leader><C-t> :action SetHarpoon2<cr>
-"nmap <leader><C-n> :action SetHarpoon3<cr>
-"nmap <leader><C-s> :action SetHarpoon4<cr>
-"
-"nmap <C-h> :action GotoHarpoon1<cr>
-"nmap <C-t> :action GotoHarpoon2<cr>
-"nmap <C-n> :action GotoHarpoon3<cr>
-"nmap <C-s> :action GotoHarpoon4<cr>
-"
-"nmap <C-e> :action ShowHarpoon<cr>
-"nmap <C-a> :action AddToHarpoon<cr>
+" quick quickscope
+" Trigger a highlight in the appropriate direction when pressing these keys:
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
