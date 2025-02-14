@@ -32,6 +32,28 @@ Plug 'junegunn/fzf.vim'
 Plug 'doums/darcula'
 Plug 'jasonccox/vim-wayland-clipboard'
 
+Plug 'tpope/vim-surround'
+Plug 'justinmk/vim-sneak'
+"Type s and two chars to start sneaking in forward direction
+"Type S and two chars to start sneaking in backward direction
+"Type ; or , to proceed with sneaking just as if you were using f or t commands
+Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'vim-scripts/argtextobj.vim'
+Plug 'dbakker/vim-paragraph-motion'
+" <count>ai	An Indentation level and line above.
+" <count>ii	Inner Indentation level (no line above).
+" <count>aI	An Indentation level and lines above/below.
+" <count>iI	Inner Indentation level (no lines above/below).
+Plug 'michaeljsmith/vim-indent-object'
+" Plug 'chrisbrah/matchit'
+Plug 'tpope/vim-commentary'
+" ae targets the entire content of the current buffer.
+" ie is similar to ae, but ie does not include leading and trailing empty lines.
+" Plug 'kana/vim-textobj-entire'
+" <leader>mj          |  <Plug>(easymotion-j) |
+Plug 'easymotion/vim-easymotion'
+
+
 call plug#end()
 
 " -----------------------

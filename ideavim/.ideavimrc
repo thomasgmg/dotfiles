@@ -40,12 +40,14 @@ set functiontextobj
 
 " ---------------------------------------
 
+map <leader>\ <Plug>(easymotion-prefix)
+
 let mapleader = "\<Space>"
 
 map <leader>m <Plug>(easymotion-prefix)
 
 " Files ----------------------------------
-let g:WhichKeyDesc_display = "<leader>s search"
+let g:WhichKeyDesc_search = "<leader>s search"
 
 " Fuzzy search for files
 nnoremap <leader><Space> :action GotoFile<CR>
@@ -63,7 +65,7 @@ nnoremap  <leader>e :action SelectInProjectView<CR>
 nnoremap  <leader>tp :action ActivateProjectToolWindow<CR>
 
 " Tool Windows -------------------------------------------
-let g:WhichKeyDesc_display = "<leader>t tool views"
+let g:WhichKeyDesc_tool = "<leader>t tool views"
 
 map <leader>tc :action ActivateCommitToolWindow<CR>
 map <leader>tf :action ActivateStructureToolWindow<CR>
@@ -72,13 +74,16 @@ map <leader>td :action ActivateDebugToolWindow<CR>
 map <leader>tt :action ActivateDatabaseToolWindow<CR>
 map <leader>th :action ActivateHierarchyToolWindow<CR>
 
+map <leader>tl :action JumpToLastWindow<CR>
+let g:WhichKeyDesc_tool_last = "<leader>tl Jump to last tool window"
+
 " Maven -------------------------------
 
 " reload
 nnoremap <leader>pm :action Maven.ReimportProject<CR>
 
 " Code actions -------------------------------
-let g:WhichKeyDesc_display = "<leader>c code"
+let g:WhichKeyDesc_code = "<leader>c code"
 
 " Rename
 nnoremap <leader>cr :action RenameElement<CR>
@@ -98,20 +103,24 @@ nnoremap gs :action GotoSuperMethod<CR>
 nnoremap <C-o> :action Back<CR>
 
 " Debug ----------------------------------
-let g:WhichKeyDesc_display = "<leader>d Debug"
+let g:WhichKeyDesc_debug = "<leader>d Debug"
 
 " debug last
 nnoremap  <leader>dl :action Debug<CR>
+let g:WhichKeyDesc_debugLast = "<leader>dl Debug last"
+
 " F8 / continue also works
 nnoremap <leader>da :action ChooseDebugConfiguration<CR>
 
 " debug current test method or class methods
 nnoremap <leader>dc :action ContextDebug<CR>
 
-nnoremap <leader>b :action ToggleLineBreakpoint<CR>
+nnoremap <leader>db :action ToggleLineBreakpoint<CR>
+let g:WhichKeyDesc_toggle_breakpoint = "<leader>db ToggleLineBreakpoint"
 
 " TODO doesn't work
 nnoremap <leader>dmb :action XDebugger.MuteBreakpoints<CR>
+map \l :action XDebugger.MuteBreakpoints<CR>
 
 " open debug context menu
 " DebugMainMenu

@@ -58,10 +58,17 @@ export PATH=~/software/idea-IC-243.23654.189/bin:$PATH
 alias cat='batcat'
 alias fd='fdfind'
 
-alias cdidea='cd ~/IdeaProjects'
-alias cdb='cd ~/dev/branches'
+alias cdprojects='cd ~/projects'
+
+alias cdnotes='cd Dropbox/slug/PMG/notes/Obsidian'
 
 # Tomcat
 #export CATALINA_HOME="/Library/Tomcat"
 #export CATALINA_BASE="/Library/Tomcat"
 #export CATALINA_OPTS="-Xms128m -Xmx512m"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/pguedes/software/google-cloud-sdk/path.bash.inc' ]; then . '/home/pguedes/software/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/pguedes/software/google-cloud-sdk/completion.bash.inc' ]; then . '/home/pguedes/software/google-cloud-sdk/completion.bash.inc'; fi
