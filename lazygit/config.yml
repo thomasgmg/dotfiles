@@ -1,3 +1,5 @@
+# ~/.config/lazygit
+
 git:
   paging:
     colorArg: always
