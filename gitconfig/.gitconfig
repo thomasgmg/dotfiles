@@ -1,6 +1,10 @@
 [user]
 	name = Paulo Moura Guedes
 	email = pmouraguedes@gmail.com
+
+[includeIf "gitdir:~/projects/gitlab/"]
+    path = ~/.gitconfig-gitlab
+
 [push]
 	default = simple
 [pull]
@@ -9,7 +13,7 @@
 	editor = vi
 	excludesfile = /Users/pguedes/.config/git/ignore
 	autocrlf = input
-  pager = delta
+    pager = delta
 	symlinks = false
 [color]
 	ui = true
@@ -40,6 +44,6 @@
     # dark = true
     # light = true
 [merge]
-    conflictstyle = diff3
+    conflictstyle = zdiff3
 [diff]
     colorMoved = default

@@ -4,9 +4,8 @@ export PS1='\u@\h \[\e[32m\]\w \[\e[91m\]$(__git_ps1)\[\e[00m\]$ '
 export VISUAL="vim"
 export EDITOR="$VISUAL"
 
-bind -m vi-insert '"jj": vi-movement-mode'
-
-set -o vi
+# bind -m vi-insert '"jj": vi-movement-mode'
+# set -o vi
 
 # alias nvimk='NVIM_APPNAME="nvim-kickstart" nvim'
 # alias nviml='NVIM_APPNAME="nvim" nvim'
@@ -33,7 +32,7 @@ export MAVEN_OPTS="-Xms128m -Xmx1024m"
 # Java
 export JAVA_OPTS="-Xms128m -Xmx512m"
 
-export PATH=~/go/bin:$PATH
+export PATH=~/go/bin:~/software/flutter/bin:$PATH
 export PATH=~/software/idea-IC-243.23654.189/bin:$PATH
 
 # export NVM_DIR="$HOME/.nvm"
