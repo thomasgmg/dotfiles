@@ -161,3 +161,5 @@ set ttimeoutlen=1
 set listchars=tab:>-,trail:~,extends:>,precedes:<,space:.
 set ttyfast
 
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
