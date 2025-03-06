@@ -2,8 +2,12 @@
 	name = Paulo Moura Guedes
 	email = pmouraguedes@gmail.com
 
-[includeIf "gitdir:~/projects/gitlab/"]
+[includeIf "gitdir:~/dev"]
     path = ~/.gitconfig-gitlab
+
+[includeIf "gitdir:~/dev/aldi"]
+    path = ~/.gitconfig-gitlab
+
 
 [push]
 	default = simple
@@ -15,6 +19,11 @@
 	autocrlf = input
     pager = delta
 	symlinks = false
+    # Gebit:
+    ignorecase = true
+    filemode = false
+    longpaths = true
+    eol = lf
 [color]
 	ui = true
 [color "branch"]
@@ -47,3 +56,6 @@
     conflictstyle = zdiff3
 [diff]
     colorMoved = default
+# Gebit
+[branch]
+    autosetupprebase = always

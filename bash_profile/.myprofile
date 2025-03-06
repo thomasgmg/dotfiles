@@ -15,24 +15,24 @@ unset GTK_IM_MODULE
 unset QT_IM_MODULE
 
 # Maven
-alias mi="mvn install"
-alias mci="mvn clean install"
-alias mcit="mvn clean install -DskipTests"
-alias mcidb="mvn clean install -Pinitdb"
-alias mp="mvn package -Pbundle"
-alias mcp="mvn clean package -Pbundle"
-alias mt="mvn test -DfailIfNoTests=false"
-alias mit="mvn verify -Pintegration-test"
-# alias mc="mvn clean && find . -mindepth 1 -maxdepth 2 -type d -name state -print0 | xargs -0 -I {} rm -rf {} +"
-alias mc="mvn compile"
-alias mcc="mvn clean compile"
+alias mi="gmvn install"
+alias mci="gmvn clean install"
+alias mcit="gmvn clean install -DskipTests"
+alias mcidb="gmvn clean install -Pinitdb"
+alias mp="gmvn package -Pbundle"
+alias mcp="gmvn clean package -Pbundle"
+alias mt="gmvn test -DfailIfNoTests=false"
+alias mit="gmvn verify -Pintegration-test"
+# alias mc="gmvn clean && find . -mindepth 1 -maxdepth 2 -type d -name state -print0 | xargs -0 -I {} rm -rf {} +"
+alias mc="gmvn compile"
+alias mcc="gmvn clean compile"
 
 export MAVEN_OPTS="-Xms128m -Xmx1024m"
 
 # Java
 export JAVA_OPTS="-Xms128m -Xmx512m"
 
-export PATH=~/go/bin:~/software/flutter/bin:$PATH
+export PATH=~/go/bin:~/software/flutter/bin:~/.npm-global/bin:$PATH
 export PATH=~/software/idea-IC-243.23654.189/bin:$PATH
 
 # export NVM_DIR="$HOME/.nvm"
@@ -58,8 +58,8 @@ alias cat='batcat'
 alias fd='fdfind'
 
 alias cdprojects='cd ~/projects'
-
-alias cdnotes='cd Dropbox/slug/PMG/notes/Obsidian'
+alias cdnotes='cd ~/Dropbox/slug/PMG/notes/Obsidian'
+alias cdaldi='cd ~/dev/aldi/'
 
 # Tomcat
 #export CATALINA_HOME="/Library/Tomcat"
@@ -71,3 +71,9 @@ if [ -f '/home/pguedes/software/google-cloud-sdk/path.bash.inc' ]; then . '/home
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/pguedes/software/google-cloud-sdk/completion.bash.inc' ]; then . '/home/pguedes/software/google-cloud-sdk/completion.bash.inc'; fi
+
+# GEBIT
+
+export COMPOSE_PROFILES=linux
+
+source ~/dev/aldi/scoscripts/init

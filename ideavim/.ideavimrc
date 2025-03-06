@@ -10,7 +10,9 @@
 " https://github.com/JetBrains/ideavim/wiki/IdeaVim-Plugins
 
 Plug 'tpope/vim-surround'
-Plug 'justinmk/vim-sneak'
+" type s and two characters to jump
+" replaced by flash
+"Plug 'justinmk/vim-sneak'
 "Type s and two chars to start sneaking in forward direction
 "Type S and two chars to start sneaking in backward direction
 "Type ; or , to proceed with sneaking just as if you were using f or t commands
@@ -31,12 +33,14 @@ Plug 'kana/vim-textobj-entire'
 Plug 'easymotion/vim-easymotion'
 
 set highlightedyank
-"set sneak
+" highlight unique matches when using f/F/t/T
 set quickscope
 set which-key
 set mini-ai
+" see the content of registers
 set peekaboo
 set functiontextobj
+set multicursor
 
 " ---------------------------------------
 
@@ -101,6 +105,7 @@ nnoremap gi :action GotoImplementation<CR>
 nnoremap gs :action GotoSuperMethod<CR>
 
 nnoremap <C-o> :action Back<CR>
+nnoremap <C-i> :action Forward<CR>
 
 " Debug ----------------------------------
 let g:WhichKeyDesc_debug = "<leader>d Debug"
@@ -142,6 +147,10 @@ inoremap jj <Esc>
 nnoremap [<space> O<Esc>j
 nnoremap ]<space> o<Esc>k
 
+inoremap <C-d> <Esc>ldwi
+inoremap <C-a> <Esc><S-i>
+inoremap <C-e> <Esc><S-a>
+
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 
@@ -154,9 +163,12 @@ inoremap <C-v> <Esc>"*pa
 
 nnoremap S _c$
 
-" Jumps to next uppercase letter.
 " :noh<CR> → Disables search highlighting immediately after jumping.
-nnoremap <leader>gu /\u<cr>:noh<CR>
+
+" Jumps to next uppercase letter.
+"nnoremap <leader>gu /\u<cr>:noh<CR>
+nnoremap gw :action EditorNextWordInDifferentHumpsMode<CR>
+nnoremap gb :action EditorPreviousWordInDifferentHumpsMode<CR>
 
 " Windows ---------------------------------
 let g:WhichKeyDesc_display = "<leader>w windows"
@@ -167,6 +179,19 @@ nnoremap <C-w>l :action NextSplitter<CR>
 nnoremap <leader>ws :action SplitHorizontally<CR>
 nnoremap <leader>wv :action SplitVertically<CR>
 nnoremap <leader>wq :action Unsplit<CR>
+
+" folding
+
+" set foldenable
+" set foldmethod=syntax
+
+nnoremap za :action ExpandCollapseToggleAction<CR>
+
+nnoremap zj :action EditorCodeBlockEnd<CR>
+nnoremap zk :action EditorCodeBlockStart<CR>
+
+" flash.nvim
+map s <Action>(flash.search)
 
 " ----------------------------------
 
