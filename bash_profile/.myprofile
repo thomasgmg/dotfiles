@@ -29,11 +29,11 @@ alias mcc="gmvn clean compile"
 
 export MAVEN_OPTS="-Xms128m -Xmx1024m"
 
-# Java
-export JAVA_OPTS="-Xms128m -Xmx512m"
-
-export PATH=~/go/bin:~/software/flutter/bin:~/.npm-global/bin:$PATH
-export PATH=~/software/idea-IC-243.23654.189/bin:$PATH
+# # Java
+# export JAVA_OPTS="-Xms128m -Xmx512m"
+#
+# export PATH=~/go/bin:~/software/flutter/bin:~/.npm-global/bin:$PATH
+# export PATH=~/software/idea-IC-243.23654.189/bin:$PATH
 
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -58,22 +58,16 @@ alias cat='batcat'
 alias fd='fdfind'
 
 alias cdprojects='cd ~/projects'
-alias cdnotes='cd ~/Dropbox/slug/PMG/notes/Obsidian'
-alias cdaldi='cd ~/dev/aldi/'
+
+alias tmg='scrot ~/Pictures/ricing.png'
 
 # Tomcat
 #export CATALINA_HOME="/Library/Tomcat"
 #export CATALINA_BASE="/Library/Tomcat"
 #export CATALINA_OPTS="-Xms128m -Xmx512m"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/pguedes/software/google-cloud-sdk/path.bash.inc' ]; then . '/home/pguedes/software/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/pguedes/software/google-cloud-sdk/completion.bash.inc' ]; then . '/home/pguedes/software/google-cloud-sdk/completion.bash.inc'; fi
-
-# GEBIT
-
-export COMPOSE_PROFILES=linux
-
-source ~/dev/aldi/scoscripts/init
+# # The next line updates PATH for the Google Cloud SDK.
+# if [ -f '/home/pguedes/software/google-cloud-sdk/path.bash.inc' ]; then . '/home/pguedes/software/google-cloud-sdk/path.bash.inc'; fi
+#
+# # The next line enables shell command completion for gcloud.
+# if [ -f '/home/pguedes/software/google-cloud-sdk/completion.bash.inc' ]; then . '/home/pguedes/software/google-cloud-sdk/completion.bash.inc'; fi
