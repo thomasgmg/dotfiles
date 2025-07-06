@@ -64,7 +64,9 @@ alias upg="sudo apt upgrade"
 alias cat='batcat'
 alias fd='fdfind'
 
-alias cdprojects='cd ~/projects'
+alias cdp='cd ~/projects'
+alias cdd="cd ~/software/suckless/dwm/"
+alias cdb="cd ~/software/suckless/dwmblocks/"
 
 alias TMG='maim ~/Pictures/ricing.png'
 
