@@ -15,17 +15,17 @@ unset GTK_IM_MODULE
 unset QT_IM_MODULE
 
 # Maven
-alias mi="gmvn install"
-alias mci="gmvn clean install"
-alias mcit="gmvn clean install -DskipTests"
-alias mcidb="gmvn clean install -Pinitdb"
-alias mp="gmvn package -Pbundle"
-alias mcp="gmvn clean package -Pbundle"
-alias mt="gmvn test -DfailIfNoTests=false"
-alias mit="gmvn verify -Pintegration-test"
+# alias mi="gmvn install"
+# alias mci="gmvn clean install"
+# alias mcit="gmvn clean install -DskipTests"
+# alias mcidb="gmvn clean install -Pinitdb"
+# alias mp="gmvn package -Pbundle"
+# alias mcp="gmvn clean package -Pbundle"
+# alias mt="gmvn test -DfailIfNoTests=false"
+# alias mit="gmvn verify -Pintegration-test"
 # alias mc="gmvn clean && find . -mindepth 1 -maxdepth 2 -type d -name state -print0 | xargs -0 -I {} rm -rf {} +"
-alias mc="gmvn compile"
-alias mcc="gmvn clean compile"
+# alias mc="gmvn compile"
+# alias mcc="gmvn clean compile"
 
 export MAVEN_OPTS="-Xms128m -Xmx1024m"
 
@@ -54,12 +54,19 @@ export MAVEN_OPTS="-Xms128m -Xmx1024m"
 # alias lt='eza --tree $eza_params'
 # alias tree='eza --tree $eza_params'
 
+alias lg="lazygit"
+alias mi="make && sudo make install"
+alias kf="sudo killall -9 firefox"
+alias v="nvim"
+alias upd="sudo apt update"
+alias upg="sudo apt upgrade"
+
 alias cat='batcat'
 alias fd='fdfind'
 
 alias cdprojects='cd ~/projects'
 
-alias tmg='scrot ~/Pictures/ricing.png'
+alias TMG='maim ~/Pictures/ricing.png'
 
 # Tomcat
 #export CATALINA_HOME="/Library/Tomcat"
