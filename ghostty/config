@@ -67,7 +67,7 @@ adjust-cell-height = 5
 
 background = 272727
 
-background-opacity = 0.7
+background-opacity = 0.8
 
 # --------------------
 
@@ -93,7 +93,7 @@ keybind = shift+down=scroll_page_lines:1
 # keybing = ctrl+= = increase_font_size
 # keybing = ctrl+- = decrease_font_size
 
-background-opacity = 0.7
+background-opacity = 0.8
 
 # --------------------
 
