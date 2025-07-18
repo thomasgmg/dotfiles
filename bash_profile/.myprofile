@@ -69,8 +69,8 @@ alias fd="fdfind"
 
 alias cdp="cd ~/projects"
 alias cdn="cd ~/notes/"
-alias cdd="cd ~/software/suckless/dwm/"
-alias cdb="cd ~/software/suckless/dwmblocks/"
+alias cdd="cd ~/software/suckless/dwm/ && nvim"
+alias cdb="cd ~/software/suckless/dwmblocks/ && nvim"
 
 alias TMG='maim ~/Pictures/ricing.png'
 
